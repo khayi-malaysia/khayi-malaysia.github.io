@@ -6,6 +6,8 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const nextConfig: NextConfig = {
   output: "export",
   basePath,
+  // /islands/redang/ -> islands/redang/index.html, which GitHub Pages serves directly.
+  trailingSlash: true,
   images: { unoptimized: true },
 };
 

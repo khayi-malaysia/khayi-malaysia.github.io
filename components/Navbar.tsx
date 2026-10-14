@@ -1,15 +1,25 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { LANGS } from "@/lib/i18n";
 import { whatsappLink } from "@/lib/trips";
 import { useLang } from "./LanguageProvider";
 import { ChevronIcon, GlobeIcon, WhatsAppIcon } from "./Icons";
 
-export function Navbar({ onHome }: { onHome: () => void }) {
+export function Navbar({ onHome }: { onHome?: () => void }) {
   const { lang, setLang, t } = useLang();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  // Only the guide pages scroll vertically; give the bar a backdrop there so text doesn't run under it.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const close = (e: MouseEvent) => {
@@ -22,9 +32,22 @@ export function Navbar({ onHome }: { onHome: () => void }) {
   const current = LANGS.find((l) => l.code === lang)!;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:px-8 md:py-6">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 px-4 transition-all duration-300 md:px-8 ${
+        scrolled ? "border-b border-white/5 bg-ink/85 py-3 backdrop-blur-lg md:py-4" : "py-4 md:py-6"
+      }`}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3">
-        <button onClick={onHome} className="group flex items-center gap-2.5">
+        <Link
+          href="/"
+          onClick={(e) => {
+            if (onHome) {
+              e.preventDefault();
+              onHome();
+            }
+          }}
+          className="group flex items-center gap-2.5"
+        >
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-sea text-ink shadow-[0_8px_24px_rgba(94,200,191,0.35)] transition-transform group-hover:scale-105">
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5" />
@@ -35,7 +58,7 @@ export function Navbar({ onHome }: { onHome: () => void }) {
             <span className="text-base font-extrabold uppercase tracking-[0.18em] text-white sm:text-lg">Khayi</span>
             <span className="text-base font-bold text-sea sm:text-lg">ခရီး</span>
           </span>
-        </button>
+        </Link>
 
         <div className="flex items-center gap-2">
           <div ref={ref} className="relative">

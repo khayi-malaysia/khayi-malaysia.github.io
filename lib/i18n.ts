@@ -26,6 +26,13 @@ type Dict = {
   endSub: string;
   endCta: string;
   rights: string;
+  explorePlaces: string;
+  placesTitle: string;
+  gettingThere: string;
+  planTrip: string;
+  planTripSub: string;
+  allIslands: string;
+  photoCredits: string;
   message: (trip: string, pax: number, date: string) => string;
   generalMessage: string;
 };
@@ -46,12 +53,19 @@ export const DICT: Record<Lang, Dict> = {
     pax: (n) => `${n} pax`,
     perPerson: "/ person",
     onRequest: "Ask for price",
-    travelDate: "Travel date (optional)",
+    travelDate: "Travel date",
     inquire: "Inquire on WhatsApp",
     endTitle: "Not sure where to go?",
     endSub: "Tell us your dates and group size — we'll suggest the perfect island for you.",
     endCta: "Chat on WhatsApp",
     rights: "All rights reserved.",
+    explorePlaces: "Places to visit",
+    placesTitle: "Places to visit",
+    gettingThere: "Getting there",
+    planTrip: "Plan this trip",
+    planTripSub: "Choose your group size and send us a message — we'll reply with the package and price.",
+    allIslands: "All islands",
+    photoCredits: "Photo credits",
     message: (trip, pax, date) =>
       `Hi! I'm interested in the *${trip}* trip.\n\n• Group size: ${pax} pax\n• Travel date: ${date || "Flexible"}\n\nPlease share the package details and price. Thank you!`,
     generalMessage: "Hi! I'd like to know more about your Malaysia island trips.",
@@ -71,12 +85,19 @@ export const DICT: Record<Lang, Dict> = {
     pax: (n) => `${n} ယောက်`,
     perPerson: "/ တစ်ဦး",
     onRequest: "ဈေးနှုန်း မေးရန်",
-    travelDate: "သွားမည့်ရက် (မဖြစ်မနေ မဟုတ်)",
+    travelDate: "သွားမည့်ရက်",
     inquire: "WhatsApp ဖြင့် စုံစမ်းရန်",
     endTitle: "ဘယ်ကျွန်းသွားရမလဲ မသေချာဘူးလား?",
     endSub: "သွားမည့်ရက်နှင့် လူဦးရေကို ပြောပြပါ — သင့်အတွက် အကောင်းဆုံးကျွန်းကို အကြံပြုပေးပါမယ်။",
     endCta: "WhatsApp ဖြင့် မေးမြန်းရန်",
     rights: "မူပိုင်ခွင့် ရယူထားသည်။",
+    explorePlaces: "လည်ပတ်စရာ နေရာများ",
+    placesTitle: "လည်ပတ်စရာ နေရာများ",
+    gettingThere: "သွားရောက်ပုံ",
+    planTrip: "ဒီခရီးစဉ်ကို စီစဉ်မယ်",
+    planTripSub: "လူဦးရေကို ရွေးပြီး ကျွန်ုပ်တို့ထံ ပို့လိုက်ပါ — ခရီးစဉ်နှင့် ဈေးနှုန်းကို ပြန်ကြားပေးပါမယ်။",
+    allIslands: "ကျွန်းအားလုံး",
+    photoCredits: "ဓာတ်ပုံ ခရက်ဒစ်",
     message: (trip, pax, date) =>
       `မင်္ဂလာပါ! *${trip}* ခရီးစဉ်ကို စိတ်ဝင်စားပါတယ်။\n\n• လူဦးရေ: ${pax} ယောက်\n• သွားမည့်ရက်: ${date || "မသတ်မှတ်ရသေး"}\n\nခရီးစဉ်အသေးစိတ်နှင့် ဈေးနှုန်းကို ပြောပြပေးပါ။ ကျေးဇူးတင်ပါတယ်!`,
     generalMessage: "မင်္ဂလာပါ! မလေးရှားကျွန်း ခရီးစဉ်များအကြောင်း သိချင်ပါတယ်။",

@@ -45,6 +45,16 @@ export function TripCarousel() {
     animFrame.current = requestAnimationFrame(step);
   }, []);
 
+  // Jump straight to an island when arriving via /#island-id.
+  useEffect(() => {
+    const el = scroller.current;
+    const i = TRIPS.findIndex((tr) => `#${tr.id}` === window.location.hash);
+    if (el && i >= 0) {
+      el.scrollLeft = (i + 1) * el.clientWidth;
+      setActive(i + 1);
+    }
+  }, []);
+
   // Track which slide is in view.
   useEffect(() => {
     const el = scroller.current;
