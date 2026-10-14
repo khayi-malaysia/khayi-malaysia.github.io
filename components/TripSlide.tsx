@@ -193,7 +193,7 @@ export function TripSlide({
               </div>
             )}
 
-            <label className="mt-4 block">
+            <label className="mt-4 block min-w-0">
               <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.2em] text-white/50">
                 {t.travelDate}
               </span>
@@ -202,7 +202,7 @@ export function TripSlide({
                 value={date}
                 min={new Date().toISOString().slice(0, 10)}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white outline-none [color-scheme:dark] focus:border-sea"
+                className="block h-11 w-full min-w-0 max-w-full appearance-none rounded-2xl border border-white/10 bg-white/5 px-4 text-left text-sm text-white outline-none [color-scheme:dark] focus:border-sea [&::-webkit-date-and-time-value]:text-left [&::-webkit-date-and-time-value]:min-h-[1.25rem]"
               />
             </label>
 
