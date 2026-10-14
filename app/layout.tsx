@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${myanmar.variable}`}>
+    <html lang="my" className={`${poppins.variable} ${myanmar.variable}`}>
       <body className="font-sans">
         <LanguageProvider>{children}</LanguageProvider>
       </body>
