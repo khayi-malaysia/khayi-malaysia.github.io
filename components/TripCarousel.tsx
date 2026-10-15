@@ -117,7 +117,7 @@ export function TripCarousel() {
 
           <div
             data-vscroll
-            className="no-scrollbar relative z-10 mx-auto flex h-full max-w-7xl flex-col [justify-content:safe_center] overflow-y-auto px-5 pb-24 pt-20 md:px-10 md:pb-28"
+            className="no-scrollbar relative z-10 mx-auto flex h-full max-w-7xl flex-col [justify-content:safe_center] overflow-y-auto px-5 pb-24 pt-32 md:px-10 md:pb-28 md:pt-44"
           >
             <span className="mb-[2.5svh] inline-flex w-fit shrink-0 animate-fade-in [@media(max-height:620px)]:hidden items-center gap-2 rounded-full border border-sea/30 bg-sea/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-sea">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sea" />
@@ -200,8 +200,8 @@ export function TripCarousel() {
       </div>
 
       {/* Bottom controls */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 px-5 pb-6 md:px-10 md:pb-8">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 pb-6 md:pb-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 md:px-10">
           <div className="pointer-events-auto flex items-center gap-1.5">
             {Array.from({ length: SLIDE_COUNT }).map((_, i) => (
               <button

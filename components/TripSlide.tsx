@@ -40,7 +40,7 @@ export function TripSlide({
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-transparent" />
 
-      <div data-vscroll className="no-scrollbar relative z-10 mx-auto flex h-full max-w-7xl flex-col [justify-content:safe_flex-end] overflow-y-auto px-5 pb-24 pt-20 md:px-10 md:pb-28">
+      <div data-vscroll className="no-scrollbar relative z-10 mx-auto flex h-full max-w-7xl flex-col [justify-content:safe_flex-end] overflow-y-auto px-5 pb-24 pt-32 md:px-10 md:pb-28 md:pt-44">
         <div className="grid items-end gap-6 md:grid-cols-[1fr_340px] md:gap-8 lg:grid-cols-[1fr_400px] lg:gap-12">
           {/* Trip info */}
           <div>

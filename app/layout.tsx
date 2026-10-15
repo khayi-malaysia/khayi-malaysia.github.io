@@ -16,7 +16,7 @@ const myanmar = Noto_Sans_Myanmar({
 });
 
 export const metadata: Metadata = {
-  title: "Khayi ခရီး | Malaysia Island Tours",
+  title: "Travel in Malaysia | Malaysia Island Tours",
   description:
     "Pangkor, Redang, Kapas, Tioman, Langkawi and Pangkor Laut — choose your island and inquire on WhatsApp.",
 };

@@ -26,7 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # Set when hosting under a sub-path, e.g. /khayi for username.github.io/khayi
+          # Set when hosting under a sub-path, e.g. /repo for username.github.io/repo
           NEXT_PUBLIC_BASE_PATH: ${{ vars.BASE_PATH }}
       - run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3

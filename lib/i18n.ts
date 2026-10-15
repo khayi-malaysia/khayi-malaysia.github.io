@@ -39,7 +39,7 @@ type Dict = {
 
 export const DICT: Record<Lang, Dict> = {
   en: {
-    brand: "Khayi ခရီး",
+    brand: "Travel in Malaysia",
     chat: "Chat with us",
     heroEyebrow: "Malaysia Island Tours",
     heroTitle: "Escape to",
@@ -71,7 +71,7 @@ export const DICT: Record<Lang, Dict> = {
     generalMessage: "Hi! I'd like to know more about your Malaysia island trips.",
   },
   my: {
-    brand: "Khayi ခရီး",
+    brand: "Travel in Malaysia",
     chat: "ဆက်သွယ်ရန်",
     heroEyebrow: "မလေးရှား ကျွန်းခရီးစဉ်များ",
     heroTitle: "အပန်းဖြေကြမယ်",

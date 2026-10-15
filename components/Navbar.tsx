@@ -33,11 +33,12 @@ export function Navbar({ onHome }: { onHome?: () => void }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 px-4 transition-all duration-300 md:px-8 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled ? "border-b border-white/5 bg-ink/85 py-3 backdrop-blur-lg md:py-4" : "py-4 md:py-6"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3">
+      {/* Same width and side padding as the hero content so the logo lines up with the text below. */}
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 md:px-10">
         <Link
           href="/"
           onClick={(e) => {
@@ -48,16 +49,12 @@ export function Navbar({ onHome }: { onHome?: () => void }) {
           }}
           className="group flex items-center gap-2.5"
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-sea text-ink shadow-[0_8px_24px_rgba(94,200,191,0.35)] transition-transform group-hover:scale-105">
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5" />
-              <path d="M12 14V6M12 6c-2.5-2-5.5-1.5-7 0M12 6c2.5-2 5.5-1.5 7 0M12 6c-1-2-3-3-5-3M12 6c1-2 3-3 5-3" />
-            </svg>
-          </span>
-          <span className="flex items-baseline gap-2 whitespace-nowrap">
-            <span className="text-base font-extrabold uppercase tracking-[0.18em] text-white sm:text-lg">Khayi</span>
-            <span className="text-base font-bold text-sea sm:text-lg">ခရီး</span>
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo.png`}
+            alt="Travel in Malaysia"
+            className="h-24 w-24 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105 md:h-32 md:w-32"
+          />
         </Link>
 
         <div className="flex items-center gap-2">

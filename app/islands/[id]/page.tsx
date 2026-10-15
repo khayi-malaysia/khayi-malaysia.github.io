@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const trip = TRIPS.find((t) => t.id === id);
   if (!trip) return {};
   return {
-    title: `${trip.name} (${trip.i18n.my.name}) | Khayi ခရီး`,
+    title: `${trip.name} (${trip.i18n.my.name}) | Travel in Malaysia`,
     description: trip.i18n.en.description,
   };
 }
